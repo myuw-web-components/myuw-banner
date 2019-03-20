@@ -1,0 +1,136 @@
+
+<style>
+  :host {
+    display: flex;
+    font-style: inherit;
+    font-variant: inherit;
+    font-family: inherit;
+  }
+
+  :host([hidden]) {
+      display: none;
+  }
+
+  #myuw-banner {
+    width: 100%;
+    min-height: 54px;
+    padding: 10px 8px 8px 16px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: var(--myuw-app-bar-font, var( --myuw-font, Arial, sans-serif));
+    font-size: var(--myuw-base-font-size, 16px);
+    align-content: center;
+    border-bottom: 1px solid #ccc;
+    background: var(--myuw-banner-bg, #fff);
+    color: var(--myuw-on-banner, #222);
+  }
+
+  #myuw-banner__illustration {
+    min-width: 40px;
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--myuw-anchor-color, #0479a8);
+  }
+
+  #myuw-banner__message {
+    display: flex;
+    flex: 1 auto;
+    align-items: center;
+  }
+
+  #myuw-banner__actions {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-end;
+    flex: 1 auto;
+    margin-top: 8px;
+  }
+
+  #myuw-banner__actions button,
+  #myuw-banner__actions a {
+    display: inline-flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    min-height: 36px;
+    min-width: 64px;
+    margin: 0 8px;
+    padding: 0 8px;
+    color: var(--myuw-anchor-color, #0479a8);
+    background-color: transparent;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-size: .875rem;
+    line-height: 2.25rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-appearance: none;
+    overflow: hidden;
+    vertical-align: middle;
+    border-radius: 4px;
+    border: none;
+  }
+
+  #myuw-banner__actions button:hover,
+  #myuw-banner__actions a:hover {
+    background: var(--myuw-button-transparency, rgba(0,0,0,0.12));
+  }
+
+  #myuw-banner__actions--confirming {
+    margin-left: 8px;
+  }
+
+  /*
+    On mobile, they scroll off-screen with content, at the same elevation as app content.
+    On desktop, they remain fixed at the top of the screen, at the same elevation as the top app bar.
+  */
+
+  @media all and (min-width: 720px) {
+    #myuw-banner {
+      min-height: 52px;
+      padding-left: 24px;
+      /* z-index: var(--z-index, 80);
+      box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12);
+      border-bottom: none;
+      position: fixed;
+      top: var(--myuw-top-bar-height, 64px); */
+    }
+
+    #myuw-banner__actions {
+      margin-left: 90px;
+      margin-top: 0;
+    }
+
+    #myuw-banner__illustration {
+      margin-right: 24px;
+    }
+  }
+
+
+</style>
+<div id="myuw-banner">
+  <div id="myuw-banner__message">
+    <i id="myuw-banner__illustration" class="material-icons"></i>
+    <span id="myuw-banner__text"></span>
+  </div>
+  <div id="myuw-banner__actions">
+    <button id="myuw-banner__actions--dismissive"></button>
+    <a id="myuw-banner__actions--confirming" href="" target="_blank"></button>
+  </div>
+</div>
