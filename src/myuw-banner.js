@@ -21,7 +21,13 @@ class MyUWBanner extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return [];
+    return [
+      'message',
+      'icon',
+      'confirming-text',
+      'confirming-url',
+      'dismissive-text'
+    ];
   }
 
   /**
@@ -46,6 +52,7 @@ class MyUWBanner extends HTMLElement {
     this['confirming-url']        = this.getAttribute('confirming-url');
     this['dismissive-text']       = this.getAttribute('dismissive-text');
     
+    this.$banner = this.shadowRoot.getElementById('myuw-banner');
     this.$message = this.shadowRoot.getElementById('myuw-banner__message');
     this.$messageText = this.shadowRoot.getElementById('myuw-banner__text');
     this.$illustration = this.shadowRoot.getElementById('myuw-banner__illustration');
@@ -55,9 +62,17 @@ class MyUWBanner extends HTMLElement {
     // Listen for open events and set positioning
     this.$dismissiveButton.addEventListener('click', () => {
       // Dismiss the banner
+      this.$banner.classList.remove('open');
     });
 
-    this.updateComponent();
+    this.$confirmingButton.addEventListener('click', () => {
+      // Dismiss the banner
+      this.$banner.classList.remove('open');
+    });
+
+    if (this['message'].length > 0) {
+      this.updateComponent();
+    }
   }
 
   /**
@@ -81,6 +96,9 @@ class MyUWBanner extends HTMLElement {
     this.$confirmingButton.innerText = this['confirming-text'];
     this.$confirmingButton.setAttribute('aria-label', this['confirming-text']);
     this.$confirmingButton.setAttribute('href', this['confirming-url']);
+
+    // Show  banner
+    this.$banner.classList.add('open');
   }
 }
 
