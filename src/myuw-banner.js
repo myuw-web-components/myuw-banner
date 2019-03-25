@@ -46,11 +46,11 @@ class MyUWBanner extends HTMLElement {
   */
   connectedCallback() {
     // Get all attributes
-    this['message']               = this.getAttribute('message');
-    this['icon']                  = this.getAttribute('icon');
-    this['confirming-text']       = this.getAttribute('confirming-text');
-    this['confirming-url']        = this.getAttribute('confirming-url');
-    this['dismissive-text']       = this.getAttribute('dismissive-text');
+    this['message']               = this.getAttribute('message') || '';
+    this['icon']                  = this.getAttribute('icon') || '';
+    this['confirming-text']       = this.getAttribute('confirming-text') || '';
+    this['confirming-url']        = this.getAttribute('confirming-url') || '';
+    this['dismissive-text']       = this.getAttribute('dismissive-text') || '';
     
     this.$banner = this.shadowRoot.getElementById('myuw-banner');
     this.$message = this.shadowRoot.getElementById('myuw-banner__message');
@@ -70,7 +70,7 @@ class MyUWBanner extends HTMLElement {
       this.$banner.classList.remove('open');
     });
 
-    if (this['message'].length > 0) {
+    if (this.$messageText != null && this['message'].length > 0) {
       this.updateComponent();
     }
   }
