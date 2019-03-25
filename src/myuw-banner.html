@@ -13,8 +13,9 @@
 
   #myuw-banner {
     width: 100%;
-    min-height: 54px;
-    padding: 10px 8px 8px 16px;
+    min-height: 0;
+    max-height: 0;
+    overflow-y: hidden;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -24,6 +25,12 @@
     border-bottom: 1px solid #ccc;
     background: var(--myuw-banner-bg, #fff);
     color: var(--myuw-on-banner, #222);
+    transition: all 0.3s cubic-bezier(0, 1, 0.5, 1);
+  }
+
+  #myuw-banner.open {
+    min-height: 54px;
+    max-height: 120px; 
   }
 
   #myuw-banner__illustration {
@@ -43,6 +50,7 @@
     display: flex;
     flex: 1 auto;
     align-items: center;
+    padding: 10px 8px 0;
   }
 
   #myuw-banner__actions {
@@ -52,6 +60,7 @@
     justify-content: flex-end;
     flex: 1 auto;
     margin-top: 8px;
+    padding: 0 8px 16px;
   }
 
   #myuw-banner__actions button,
