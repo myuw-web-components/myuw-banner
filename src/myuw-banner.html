@@ -80,8 +80,8 @@
     background-color: transparent;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    font-size: .875rem;
-    line-height: 2.25rem;
+    font-size: .875em;
+    line-height: 2.25em;
     font-weight: 500;
     text-decoration: none;
     cursor: pointer;
@@ -111,7 +111,7 @@
   */
 
   @media all and (min-width: 720px) {
-    #myuw-banner {
+    #myuw-banner.open {
       min-height: 52px;
       padding-left: 24px;
       /* z-index: var(--z-index, 80);
@@ -121,9 +121,10 @@
       top: var(--myuw-top-bar-height, 64px); */
     }
 
-    #myuw-banner__actions {
+    #myuw-banner.open #myuw-banner__actions {
       margin-left: 90px;
       margin-top: 0;
+      padding: 0;
     }
 
     #myuw-banner__illustration {
