@@ -25,6 +25,7 @@ Use the component's HTML tag wherever you want:
     icon=""
     confirming-text=""
     confirming-url=""
+    confirming-callback=""
     dismissive-text=""
 >
 </myuw-banner>
@@ -35,7 +36,8 @@ Use the component's HTML tag wherever you want:
 - **message:** Sets the message to display in the banner
 - **icon:** Sets an icon to go with the message (optional)
 - **confirming-text:** Sets the text for the rightmost button (take action/confirmation)
-- **confirming-url:** Sets the url to go to when the confirming button is clicked
+- **confirming-url:** Sets the url to go to when the confirming button is clicked (optional)
+- **confirming-callback:** Sets the onclick event for the button (optional). Must be used if no `confirming-url` is set (and vice versa).
 - **dismissive-text:** Sets the text for the leftmost button (skip action/dismiss banner)
 
 ### Styling the banner
