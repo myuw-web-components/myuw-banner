@@ -39,7 +39,8 @@
           message="This is a test message for the MyUW Banner web component"
           icon="favorite"
           confirming-text="Take action"
-          confirming-url="#"
+          confirming-url=""
+          confirming-callback="testCallback()"
           dismissive-text="Skip for now">
         </myuw-banner>
         <div class="demo__container">
@@ -52,6 +53,8 @@
     </body>
 
     <script>
-      
+      function testCallback() {
+        console.log('callback works');
+      }
     </script>
 </html>
