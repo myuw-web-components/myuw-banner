@@ -1,5 +1,10 @@
 # myuw-banner versions
 
+## 1.1.0
+
+### Added
+- New attribute `confirming-callback` sets the `onclick` attribute for the confirmation button. If both `confirming-callback` and `confirming-url` are present, the component will prefer `confirming-url`.
+
 ## 1.0.2
 
 ### Fixed
