@@ -1,5 +1,10 @@
 # myuw-banner versions
 
+## 1.1.1
+
+### Fixed
+- Adjusted vertical alignment of elements to be more attractive on many screen sizes.
+
 ## 1.1.0
 
 ### Added
