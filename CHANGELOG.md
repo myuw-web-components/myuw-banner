@@ -1,5 +1,11 @@
 # myuw-banner versions
 
+## 1.2.0
+
+### Added
+- Delivery pipeline
+- Contributing guidelines
+
 ## 1.1.1
 
 ### Fixed
@@ -20,7 +26,7 @@
 ## 1.0.1
 
 ### Added
-- Banner closes when buttons are clicked (animated slide) 
+- Banner closes when buttons are clicked (animated slide)
 
 ## 1.0.0
 

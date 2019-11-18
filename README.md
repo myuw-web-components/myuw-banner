@@ -4,32 +4,26 @@ A component for displaying slightly-interruptive messages via a banner below the
 
 ## Getting Started
 
-Add the following import to your page's `<head>`:
+Include the component as follows:
 
 ```html
-<script type="module" src="https://unpkg.com/@myuw-web-components/myuw-banner@^1?module"></script>
-<script nomodule scr="https://unpkg.com/@myuw-web-components/myuw-banner@^1"></script>
-```
+<!-- import the module -->
+<script type="module" src="https://cdn.my.wisc.edu/@myuw-web-components/myuw-banner@latest/myuw-banner.min.mjs"></script>
 
-**Important**: For responsiveness to many screen sizes, ensure you have included the viewport meta tag in your application:
+<!-- fallback for browsers without ES2015 module support -->
+<script nomodule src="https://cdn.my.wisc.edu/@myuw-web-components/myuw-banner@latest/myuw-banner.min.js"></script>
 
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1">
-```
-
-Use the component's HTML tag wherever you want:
-
-```HTML
 <myuw-banner
-    message="MyUW"
-    icon=""
-    confirming-text=""
-    confirming-url=""
-    confirming-callback=""
-    dismissive-text=""
->
-</myuw-banner>
+  message="MyUW"
+  icon=""
+  confirming-text=""
+  confirming-url=""
+  confirming-callback=""
+  dismissive-text=""
+></myuw-banner>
 ```
+
+_Note:_ The evergreen "latest" version can be used for convenience, but in production settings it is recommended to use the latest [release version](https://github.com/myuw-web-components/myuw-banner/releases) specifically, and upgrade only after testing!
 
 ### Configurable properties via attributes
 
@@ -58,8 +52,8 @@ Add the following selector to your CSS:
 
 ```css
 myuw-banner {
-    --myuw-banner-bg: #c5050c;
-    --myuw-on-banner: #fff;
+  --myuw-banner-bg: #c5050c;
+  --myuw-on-banner: #fff;
 }
 ```
 
