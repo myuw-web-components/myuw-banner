@@ -1,5 +1,10 @@
 # myuw-banner versions
 
+## 1.2.1
+
+### Added
+- Aria implementation for minor accessibility improvements
+
 ## 1.2.0
 
 ### Added
