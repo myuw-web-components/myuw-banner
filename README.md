@@ -65,3 +65,19 @@ To run the demo app locally and test the component, run the following commands:
 $ npm install
 $ npm start
 ```
+
+## Releasing
+
+To release a new version:
+
+- Pick an appropriate version number, semantically versioning.
+  - Backwards-compatible bugfix? patch version.
+  - Backwards-compatible new or changed feature? minor version.
+  - Breaking change of any kind? major version.
+- Ensure `package.json` and `package-lock.json` reflect this version,
+  and that there's a tag for the version pushed to the canonical git repository.
+  (One good way to do this is `npm version {type}` and then pushing the tag.)
+- `npm publish` to publish the version as now described in `package.json`
+- tada! once the version publishes to npm,
+  unpkg picks it up, making it available by named version and as latest.
+- Ensure the `CHANGELOG.md` reflects this version and its release date.
