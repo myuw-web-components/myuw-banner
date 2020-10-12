@@ -1,5 +1,10 @@
 # myuw-banner versions
 
+## 1.2.2
+
+### Added
+- Add style to make main CTA more prominent
+
 ## 1.2.1
 
 ### Added
