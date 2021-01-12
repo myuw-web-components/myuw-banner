@@ -1,5 +1,10 @@
 # myuw-banner versions
 
+## 1.2.3
+
+### Updated
+- Update max-width of the banner to avoid the content being too distant from the action buttons on screens above 1400px
+
 ## 1.2.2
 
 ### Added
