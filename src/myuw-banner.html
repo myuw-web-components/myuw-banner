@@ -5,6 +5,7 @@
     font-style: inherit;
     font-variant: inherit;
     font-family: inherit;
+    border-bottom: 1px solid #ccc;
   }
 
   :host([hidden]) {
@@ -22,7 +23,6 @@
     font-family: var( --myuw-font, Arial, sans-serif);
     font-size: var(--myuw-base-font-size, 16px);
     align-content: center;
-    border-bottom: 1px solid #ccc;
     background: var(--myuw-banner-bg, #fff);
     color: var(--myuw-on-banner, #222);
     transition: all 0.3s cubic-bezier(0, 1, 0.5, 1);
@@ -114,6 +114,13 @@
     On mobile, they scroll off-screen with content, at the same elevation as app content.
     On desktop, they remain fixed at the top of the screen, at the same elevation as the top app bar.
   */
+
+  @media screen and (min-width: 1400px) {
+    #myuw-banner.open {
+      max-width: 1245px;
+      margin: 0 auto;
+    }
+  }
 
   @media all and (min-width: 720px) {
     #myuw-banner.open {
