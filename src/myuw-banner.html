@@ -13,9 +13,9 @@
   }
 
   #myuw-banner {
+    padding: 8px 24px;
     width: 100%;
     min-height: 0;
-    max-height: 0;
     overflow-y: hidden;
     display: flex;
     flex-direction: row;
@@ -30,7 +30,6 @@
 
   #myuw-banner.open {
     min-height: 54px;
-    max-height: 120px; 
   }
 
   #myuw-banner__illustration {
@@ -50,7 +49,6 @@
     display: flex;
     flex: 1 auto;
     align-items: center;
-    padding: 8px;
   }
 
   #myuw-banner__actions {
@@ -120,12 +118,18 @@
       max-width: 1245px;
       margin: 0 auto;
     }
+
   }
+
+@media screen and (max-width: 721px) {
+      #myuw-banner__message {
+      padding-bottom: 8px;
+    }
+}
 
   @media all and (min-width: 720px) {
     #myuw-banner.open {
       min-height: 52px;
-      padding: 0 24px;
       /* z-index: var(--z-index, 80);
       box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12);
       border-bottom: none;
