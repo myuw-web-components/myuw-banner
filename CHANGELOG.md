@@ -1,5 +1,11 @@
 # myuw-banner versions
 
+## 1.2.4
+
+### Updated
+- Remove max-height property of the banner to prevent content from not fitting in the view
+- Update padding around the content
+
 ## 1.2.3
 
 ### Updated
