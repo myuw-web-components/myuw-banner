@@ -1,5 +1,11 @@
 # myuw-banner versions
 
+## 2.0.0 - 2021-04-12
+
+- BREAKING, goofy change: replaces the dismiss button with a hard-coded
+  "Learn more" link supporting the banner message about availability of the
+  2020 WRS ETF Statement of Benefits.
+
 ## 1.2.4
 
 ### Updated

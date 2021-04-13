@@ -65,8 +65,10 @@ class MyUWBanner extends HTMLElement {
 
     // Listen for open events and set positioning
     this.$dismissiveButton.addEventListener('click', () => {
-      // Dismiss the banner
-      this.$banner.classList.remove('open');
+      // Do not dismiss the banner, since we are abusing the dismissive button
+      // not to dismiss the banner message, but to offer a learn more link.
+      // A user might learn more and then, having learned more, wish to click
+      // the action button.
     });
 
     this.$confirmingButton.addEventListener('click', () => {
@@ -92,10 +94,6 @@ class MyUWBanner extends HTMLElement {
     } else {
       this.$illustration.style.display = 'none';
     }
-    
-    // Set up buttons
-    this.$dismissiveButton.innerText = this['dismissive-text'];
-    this.$dismissiveButton.setAttribute('aria-label', this['dismissive-text']);
 
     this.$confirmingButton.innerText = this['confirming-text'];
     this.$confirmingButton.setAttribute('aria-label', this['confirming-text']);
