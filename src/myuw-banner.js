@@ -24,10 +24,12 @@ class MyUWBanner extends HTMLElement {
     return [
       'message',
       'icon',
-      'confirming-text',
-      'confirming-url',
-      'confirming-callback',
-      'dismissive-text'
+      'action-label',
+      'action-aria-label',
+      'action-url',
+      'action-callback',
+      'learn-more-aria-label',
+      'learn-more-url'
     ];
   }
 
@@ -38,7 +40,7 @@ class MyUWBanner extends HTMLElement {
     // Update the attribute internally
     this[name] = newValue;
     // Update the component
-    if (this.$messageText && this.$illustration && this.$confirmingButton && this.$dismissiveButton) {
+    if (this.$messageText && this.$illustration && this.$actionButton) {
       this.updateComponent();
     }
   }
@@ -51,28 +53,24 @@ class MyUWBanner extends HTMLElement {
     // Get all attributes
     this['message']               = this.getAttribute('message') || '';
     this['icon']                  = this.getAttribute('icon') || '';
-    this['confirming-text']       = this.getAttribute('confirming-text') || '';
-    this['confirming-url']        = this.getAttribute('confirming-url') || '';
-    this['confirming-callback']   = this.getAttribute('confirming-callback') || '';
-    this['dismissive-text']       = this.getAttribute('dismissive-text') || '';
-    
+    this['action-label']       = this.getAttribute('action-label') || '';
+    this['action-aria-label']       = this.getAttribute('action-aria-label') || '';
+    this['action-url']        = this.getAttribute('action-url') || '';
+    this['action-callback']   = this.getAttribute('action-callback') || '';
+    this['learn-more-aria-label']       = this.getAttribute('learn-more-aria-label') || '';
+    this['learn-more-url']       = this.getAttribute('learn-more-url') || '';
+
     this.$banner = this.shadowRoot.getElementById('myuw-banner');
     this.$message = this.shadowRoot.getElementById('myuw-banner__message');
     this.$messageText = this.shadowRoot.getElementById('myuw-banner__text');
     this.$illustration = this.shadowRoot.getElementById('myuw-banner__illustration');
-    this.$dismissiveButton = this.shadowRoot.getElementById('myuw-banner__actions--dismissive');
-    this.$confirmingButton = this.shadowRoot.getElementById('myuw-banner__actions--confirming');
+    this.$learnMoreButton = this.shadowRoot.getElementById('myuw-banner__actions--learn-more');
+    this.$actionButton = this.shadowRoot.getElementById('myuw-banner__actions--action');
 
     // Listen for open events and set positioning
-    this.$dismissiveButton.addEventListener('click', () => {
-      // Do not dismiss the banner, since we are abusing the dismissive button
-      // not to dismiss the banner message, but to offer a learn more link.
-      // A user might learn more and then, having learned more, wish to click
-      // the action button.
-    });
 
-    this.$confirmingButton.addEventListener('click', () => {
-      // Dismiss the banner
+    this.$actionButton.addEventListener('click', () => {
+      // Dismiss the banner upon taking action
       this.$banner.classList.remove('open');
     });
 
@@ -91,21 +89,29 @@ class MyUWBanner extends HTMLElement {
     // Set icon
     if (this['icon'].length > 0) {
       this.$illustration.innerHTML = this['icon'];
+      this.$illustration.style.display = '';
     } else {
       this.$illustration.style.display = 'none';
     }
 
-    this.$confirmingButton.innerText = this['confirming-text'];
-    this.$confirmingButton.setAttribute('aria-label', this['confirming-text']);
+    this.$actionButton.innerText = this['action-label'];
+    this.$actionButton.setAttribute('aria-label', this['action-aria-label']);
 
-    if (this['confirming-url'].length > 0) {
-      this.$confirmingButton.setAttribute('href', this['confirming-url']);
-      this.$confirmingButton.setAttribute('target', '_blank');
-    } else if (this['confirming-callback'].length > 0) {
-      this.$confirmingButton.setAttribute('onclick', this['confirming-callback']);
+    if (this['action-url'].length > 0) {
+      this.$actionButton.setAttribute('href', this['action-url']);
+      this.$actionButton.setAttribute('target', '_blank');
     }
 
-    // Show  banner
+    if (this['learn-more-url'].length > 0) {
+      this.$learnMoreButton.setAttribute('href', this['learn-more-url']);
+      this.$learnMoreButton.setAttribute('target', '_blank');
+      this.$learnMoreButton.setAttribute('aria-label', this['learn-more-aria-label']);
+      this.$learnMoreButton.style.display = '';
+    } else {
+      this.$learnMoreButton.style.display = 'none';
+    }
+
+    // Show banner
     this.$banner.classList.add('open');
   }
 }

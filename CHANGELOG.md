@@ -1,5 +1,15 @@
 # myuw-banner versions
 
+## 3.0.0 - 2021-04-22
+
+BREAKING CHANGES:
+
++ Removed dismiss feature.
+  Dismiss had not been, in practice, implemented in a way that persisted anyway.
++ Added learn more link feature.
++ Removed hard-coded learn more link specific to 2020 WRS ETF SoB.
++ Re-named attributes.
+
 ## 2.0.0 - 2021-04-12
 
 - BREAKING, goofy change: replaces the dismiss button with a hard-coded
