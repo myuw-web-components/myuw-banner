@@ -16,10 +16,11 @@ Include the component as follows:
 <myuw-banner
   message="MyUW"
   icon=""
-  confirming-text=""
-  confirming-url=""
-  confirming-callback=""
-  dismissive-text=""
+  action-label=""
+  action-aria-label=""
+  action-url=""
+  learn-more-aria-label=""
+  learn-more-url=""
 ></myuw-banner>
 ```
 
@@ -29,10 +30,25 @@ _Note:_ The evergreen "latest" version can be used for convenience, but in produ
 
 - **message:** Sets the message to display in the banner
 - **icon:** Sets an icon to go with the message (optional)
-- **confirming-text:** Sets the text for the rightmost button (take action/confirmation)
-- **confirming-url:** Sets the url to go to when the confirming button is clicked (optional)
-- **confirming-callback:** Sets the onclick event for the button (optional). Must be used if no `confirming-url` is set (and vice versa).
-- **dismissive-text:** Sets the text for the leftmost button (skip action/dismiss banner)
+- **action-label:** Sets the text for the rightmost button (take action/confirmation)
+- **action-aria-label:** Sets the aria label for the action button.
+  Whereas a label like "Sign up" might make little sense out of context,
+  an ARIA label like "Sign up for a vaccination appointment"
+  clarifies what one is signing up for.
+- **action-url:** Sets the url to go to when the confirming button is clicked
+  (required)
+- **learn-more-aria-label:** Sets the aria-label for the secondary button.
+  This addresses the usability problem that
+  for a typical user a label like "Learn more" might be sufficient
+  because the context is visually apparent from the placement of the button,
+  but for a user consuming the links out of context
+  (e.g., jumping between links in a screen reader browser),
+  a label like "Learn more" prompts the question "Learn more *about what???*".
+  This ARIA label is a chance to make it apparent what it is one would learn more about.
+  A reasonable value for this might be "Learn more about making a COVID-19 vaccination appointment."
+  (optional; required if learn-more-url is set)
+- **learn-more-url:** Sets the href for the secondary button.
+  (optional: if not set, button does not appear)
 
 ### Styling the banner
 
