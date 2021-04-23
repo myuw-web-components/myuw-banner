@@ -1,6 +1,6 @@
 # myuw-banner versions
 
-## 3.0.0 - 2021-04-22
+## 3.0.0 - 2021-04-23
 
 BREAKING CHANGES:
 
