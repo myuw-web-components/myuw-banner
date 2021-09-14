@@ -1,5 +1,9 @@
 # myuw-banner versions
 
+## Next (3.1.0?)
+
++ Updates documentation and example to recommend sourcing from unpkg.com, not from cdn.my.wisc.edu.
+
 ## 3.0.0 - 2021-04-23
 
 BREAKING CHANGES:

@@ -8,10 +8,10 @@ Include the component as follows:
 
 ```html
 <!-- import the module -->
-<script type="module" src="https://cdn.my.wisc.edu/@myuw-web-components/myuw-banner@latest/myuw-banner.min.mjs"></script>
+<script type="module" src="https://unpkg.com/@myuw-web-components/myuw-banner@latest/dist/myuw-banner.min.mjs"></script>
 
 <!-- fallback for browsers without ES2015 module support -->
-<script nomodule src="https://cdn.my.wisc.edu/@myuw-web-components/myuw-banner@latest/myuw-banner.min.js"></script>
+<script nomodule src="https://unpkg.com/@myuw-web-components/myuw-banner@latest/dist/myuw-banner.min.js"></script>
 
 <myuw-banner
   message="MyUW"
