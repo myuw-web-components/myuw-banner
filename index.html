@@ -10,20 +10,23 @@
   /* Styles for demo purposes only */
   .demo__container {
     padding: 16px 30px;
-    font-family: 'Roboto';
+    font-family: Red Hat Display, sans-serif
   }
 </style>
 
 <!-- Material icons -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.19/angular-material.min.css" />
+<link rel="preload" href="https://cdn.wisc.cloud/fonts/uw-rh/0.0.1/redhat-display-latin.v14.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://cdn.wisc.cloud/fonts/uw-rh/0.0.1/redhat-text-latin.v13.woff2" as="font" type="font/woff2" crossorigin>
+
 <!-- Web component polyfill loader -->
 <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
 
 <!-- MyUW web components -->
 <script type="module">
-  import "https://cdn.my.wisc.edu/@myuw-web-components/myuw-app-styles@latest/myuw-app-styles.min.mjs";
-  import "https://cdn.my.wisc.edu/@myuw-web-components/myuw-app-bar@latest/myuw-app-bar.min.mjs";
   import "./dist/myuw-banner.mjs";
 </script>
 
