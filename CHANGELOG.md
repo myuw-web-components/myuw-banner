@@ -1,5 +1,9 @@
 # myuw-banner versions
 
+## 3.0.2
+
++ Font update
+
 ## 3.0.1
 
 + Remove references to Roboto and Arial fonts and replaced with Red Hat Display and Red Hat Text
