@@ -1,5 +1,9 @@
 # myuw-banner versions
 
+## 3.0.3
+
++ Add margin-top to accommodate new top banner space
+
 ## 3.0.2
 
 + Font update
