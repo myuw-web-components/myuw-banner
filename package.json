@@ -1,6 +1,6 @@
 {
   "name": "@myuw-web-components/myuw-banner",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "",
   "module": "dist/myuw-banner.min.mjs",
   "browser": "dist/myuw-banner.min.js",
