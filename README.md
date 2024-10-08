@@ -1,4 +1,5 @@
 # myuw-banner
+**`myuw-banner` is not currently maintained.**
 
 A component for displaying slightly-interruptive messages via a banner below the top app bar.
 
